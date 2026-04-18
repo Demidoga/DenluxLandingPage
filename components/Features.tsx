@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { BGPattern } from "@/components/ui/bg-pattern";
 
 const features = [
   {
@@ -73,6 +74,14 @@ export default function Features() {
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-45% to-transparent" />
       </div>
+
+      <BGPattern
+        variant="grid"
+        mask="fade-edges"
+        size={42}
+        aria-hidden="true"
+        className="pointer-events-none opacity-8 z-0 max-w-4xl max-h-xl left-1/2 -translate-x-1/2"
+      />
 
       {/* Content — left-aligned, above the image */}
       <div className="relative z-10 max-w-7xl mx-auto">
