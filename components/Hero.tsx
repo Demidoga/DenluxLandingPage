@@ -80,54 +80,43 @@ export default function Hero() {
           <div className="max-w-4xl">
             {/* Clinical Identifier / Kicker */}
             <div className="flex items-center gap-4 mb-10 animate-fade-in-up">
-              <div className="flex items-center justify-center w-10 h-10 border border-white/10 bg-white/5 backdrop-blur-md">
-                <Activity className="size-5 text-accent-blue" />
+              <div className="flex items-center justify-center w-8 h-8 border border-white/10 bg-white/5 backdrop-blur-md">
+                <Activity className="size-4 text-accent-blue" />
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-white">
-                  Denlux Clinical Group
-                </span>
-                <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-white/40 mt-0.5">
-                  Precise. Modern. Compassionate.
-                </span>
+                <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-white/80">
+              DENLUX DENTAL CLINIC
+            </span>
               </div>
             </div>
-
-            <h1 className="text-6xl sm:text-8xl lg:text-9xl font-bold text-white leading-[0.85] tracking-tighter mb-10 animate-fade-in-up animate-delay-100">
-              Clinical <br />
-              <span className="text-white/20">Excellence.</span>
+{
+            // <h1 className="text-6xl sm:text-8xl lg:text-9xl font-bold text-white leading-[0.85] tracking-tighter mb-10 animate-fade-in-up animate-delay-100">
+            //   CLINICAL<br />
+            //   <span className="text-white/40">PRECISSION</span>
+            // </h1>
+}
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tighter mb-8 animate-fade-in-up animate-delay-100">
+              PRECISSION <br />
+              <span className="text-white/40">DENTISTRY</span>
             </h1>
 
-            <div className="flex flex-col md:flex-row md:items-start gap-12 mb-16 animate-fade-in-up animate-delay-200">
-              <p className="max-w-md text-lg text-white/50 leading-relaxed">
-                Experience a new standard of oral healthcare where medical rigor meets 
-                uncompromising aesthetic results. Engineered for comfort, designed for clarity.
-              </p>
-              <div className="hidden md:block w-[1px] h-20 bg-white/10" />
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 bg-accent-blue" />
-                  <span className="text-xs font-mono uppercase tracking-widest text-white/70">Restorative Care</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 bg-white/20" />
-                  <span className="text-xs font-mono uppercase tracking-widest text-white/70">Cosmetic Dentistry</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 bg-white/20" />
-                  <span className="text-xs font-mono uppercase tracking-widest text-white/70">Preventive Medicine</span>
-                </div>
-              </div>
-            </div>
+            <p className="max-w-xl text-lg sm:text-xl text-white/60 leading-relaxed mb-12 animate-fade-in-up animate-delay-200">
+              Experience a new standard of oral healthcare where medical rigor meets 
+              uncompromising aesthetic results. Engineered for comfort, designed for clarity.
+            </p>
+            
 
+            {
+             // <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 animate-fade-in-up animate-delay-300">
+            }
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 animate-fade-in-up animate-delay-300">
               <Button
                 asChild
                 variant="accent"
                 size="lg"
-                className="rounded-none h-16 px-12 text-sm font-bold uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-95"
+                className="rounded-none h-14 px-10 text-base font-semibold transition-transform active:scale-95"
               >
-                <a href="#cta" className="flex items-center gap-3">
+                <a href="#cta" className="flex items-center gap-2">
                   Book consultation <ArrowRight className="size-4" />
                 </a>
               </Button>
@@ -135,10 +124,10 @@ export default function Hero() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="rounded-none h-16 px-12 text-sm font-bold uppercase tracking-widest bg-transparent border-white/10 text-white hover:bg-white hover:text-black transition-all active:scale-95"
+                className="rounded-none h-14 px-10 text-base font-semibold bg-transparent border-white/20 text-white hover:bg-accent-blue/15 hover:border-accent-blue/40 hover:text-white transition-all active:scale-95"
               >
                 <a href="#services">
-                  Clinical Services
+                  Explore Clinical Services
                 </a>
               </Button>
             </div>
@@ -154,8 +143,8 @@ export default function Hero() {
             </div>
             <div className="w-px h-8 bg-white/10" />
             <div className="flex flex-col gap-1 text-[9px] font-mono text-white/20 uppercase tracking-widest">
-              <span>Operational Status</span>
-              <span className="text-accent-blue">Accepting New Patients</span>
+              <span>LOCATION</span>
+              <span className="text-accent-blue">Gulf Star Heights, Umer Block, Paris City Road, Street No. 3, H-13, Islamabad</span>
             </div>
           </div>
         </div>
