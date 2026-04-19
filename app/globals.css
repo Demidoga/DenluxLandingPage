@@ -8,6 +8,8 @@
   --surface: #fafafa;
   --surface-elevated: #f5f5f5;
   --accent: #0a0a0a;
+  --accent-blue: #1bc3ea;
+  --accent-blue-soft: rgba(27, 195, 234, 0.08);
 
   /* shadcn variables mapping to monochromatic theme */
   --primary: #0a0a0a;
@@ -20,6 +22,7 @@
   --destructive-foreground: #ffffff;
   --input: #e5e5e5;
   --ring: #0a0a0a;
+  --ring-accent: #1bc3ea;
 }
 
 @theme inline {
@@ -40,6 +43,8 @@
   --color-destructive-foreground: var(--destructive-foreground);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-soft: var(--accent-blue-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

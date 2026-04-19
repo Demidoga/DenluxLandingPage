@@ -52,7 +52,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-foreground ${scrolled ? "text-muted" : "text-white/70 hover:text-white"
+              className={`text-sm font-medium transition-colors duration-200 ${scrolled ? "text-muted hover:text-accent-blue" : "text-white/70 hover:text-white"
                 }`}
             >
               {link.label}
@@ -60,7 +60,7 @@ export default function Header() {
           ))}
           <Button
             asChild
-            variant={scrolled ? "default" : "secondary"}
+            variant="accent"
           >
             <a href="#cta">Book Appointment</a>
           </Button>
@@ -98,7 +98,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted py-3 border-b border-border last:border-0 hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted py-3 border-b border-border last:border-0 hover:text-accent-blue transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
@@ -108,6 +108,7 @@ export default function Header() {
             asChild
             className="mt-3 w-full"
             size="lg"
+            variant="accent"
           >
             <a href="#cta" onClick={() => setMobileOpen(false)}>
               Book Appointment

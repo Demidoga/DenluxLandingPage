@@ -31,8 +31,8 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Clinical Identifier / Kicker */}
           <div className="flex items-center gap-3 mb-8 animate-fade-in-up">
-            <div className="flex items-center justify-center w-8 h-8 border border-white/20 bg-white/5 backdrop-blur-sm">
-              <Activity className="size-4 text-white" />
+            <div className="flex items-center justify-center w-8 h-8 border border-accent-blue/30 bg-accent-blue/10 backdrop-blur-sm">
+              <Activity className="size-4 text-accent-blue" />
             </div>
             <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-white/80">
               DENLUX DENTAL CLINIC
@@ -52,7 +52,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 animate-fade-in-up animate-delay-300">
             <Button
               asChild
-              variant="secondary"
+              variant="accent"
               size="lg"
               className="rounded-none h-14 px-10 text-base font-semibold transition-transform active:scale-95"
             >
@@ -64,7 +64,7 @@ export default function Hero() {
               asChild
               variant="outline"
               size="lg"
-              className="rounded-none h-14 px-10 text-base font-semibold bg-transparent border-white/20 text-white hover:bg-white hover:text-black hover:border-white transition-all active:scale-95"
+              className="rounded-none h-14 px-10 text-base font-semibold bg-transparent border-white/20 text-white hover:bg-accent-blue/15 hover:border-accent-blue/40 hover:text-white transition-all active:scale-95"
             >
               <a href="#services">
                 Explore Clinical Services

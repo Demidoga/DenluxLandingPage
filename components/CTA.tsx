@@ -48,7 +48,7 @@ export default function CTA() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
           <a
             href="tel:+920000000000"
-            className="inline-flex items-center px-12 py-5 rounded-full bg-white text-foreground text-sm font-medium hover:bg-white/90 transition-all duration-200"
+            className="inline-flex items-center px-12 py-5 rounded-full bg-accent-blue text-white text-sm font-medium hover:bg-accent-blue/85 transition-all duration-200"
           >
             Book an appointment
             <svg
@@ -68,7 +68,7 @@ export default function CTA() {
           </a>
           <a
             href="tel:+920000000000"
-            className="inline-flex items-center px-12 py-5 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-all duration-200"
+            className="inline-flex items-center px-12 py-5 rounded-full border border-white/20 text-white text-sm font-medium hover:border-accent-blue/40 hover:bg-accent-blue/10 transition-all duration-200"
           >
             <svg
               className="mr-2 w-4 h-4"

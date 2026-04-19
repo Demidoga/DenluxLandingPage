@@ -98,7 +98,7 @@ export default function Pricing() {
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {plan.highlighted && (
-                <span className="absolute -top-3 left-8 text-xs font-medium px-3 py-1 bg-white text-foreground rounded-full">
+                <span className="absolute -top-3 left-8 text-xs font-medium px-3 py-1 bg-accent-blue text-white rounded-full">
                   Recommended
                 </span>
               )}
@@ -143,7 +143,7 @@ export default function Pricing() {
                   <li key={j} className="flex items-start gap-3 text-sm">
                     <svg
                       className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
-                        plan.highlighted ? "text-white/60" : "text-foreground"
+                        plan.highlighted ? "text-accent-blue" : "text-foreground"
                       }`}
                       fill="none"
                       stroke="currentColor"
@@ -170,7 +170,7 @@ export default function Pricing() {
 
               <Button
                 asChild
-                variant={plan.highlighted ? "secondary" : "default"}
+                variant={plan.highlighted ? "accent" : "default"}
                 size="lg"
                 className="mt-auto w-full"
               >

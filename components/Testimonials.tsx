@@ -131,7 +131,7 @@ export default function Testimonials() {
                       key={s}
                       className={`w-3.5 h-3.5 ${
                         activeIndex === i
-                          ? "text-white/60"
+                          ? "text-accent-blue"
                           : "text-foreground/30"
                       }`}
                       fill="currentColor"
@@ -156,7 +156,7 @@ export default function Testimonials() {
               aria-label={`View testimonial ${i + 1}`}
               className={`transition-all duration-300 rounded-full ${
                 activeIndex === i
-                  ? "w-6 h-1.5 bg-foreground"
+                  ? "w-6 h-1.5 bg-accent-blue"
                   : "w-1.5 h-1.5 bg-border hover:bg-muted"
               }`}
             />
