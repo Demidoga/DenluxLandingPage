@@ -5,10 +5,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Team", href: "#team" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Features", href: "/#features" },
+  { label: "Services", href: "/#services" },
+  { label: "Team", href: "/#team" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Pricing", href: "/#pricing" }
 ];
 
 export default function Header() {

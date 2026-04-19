@@ -51,34 +51,60 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="section-padding bg-surface flex flex-col items-center">
-      <div className="max-w-7xl mx-auto">
+    <section ref={sectionRef} id="services" className="section-padding bg-background border-t border-border">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
-        <div className="max-w-2xl mx-auto text-center mb-10 reveal">
-          <p className="text-sm uppercase tracking-[0.15em] text-muted mb-4">Our services</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
-            Complete dental care<br />under one roof
-          </h2>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
+          <div className="max-w-2xl">
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Services & Specialized Care</p>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1]">
+              Advanced dental solutions<br />for every patient
+            </h2>
+          </div>
+          <div className="mt-6 md:mt-0 max-w-xs">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              We provide comprehensive care using the latest technology and clinical excellence.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 border border-border rounded-2xl md:grid-cols-3 gap-0 transition-all duration-300">
+        <div className="grid grid-cols-1 md:grid-cols-3 border-l border-t border-border">
           {categories.map((cat, i) => (
             <div
               key={i}
-              className="reveal group bg-white  p-12 lg:p-16 flex flex-col text-center items-center hover:border-foreground/20 transition-all duration-300"
+              className="reveal group p-8 lg:p-12 border-r border-b border-border flex flex-col hover:bg-surface transition-colors duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <span className="text-xs font-mono text-muted mb-6">0{i + 1}</span>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{cat.title}</h3>
-              <p className="text-sm text-muted leading-relaxed mb-10 max-w-xs mx-auto">{cat.description}</p>
+              <div className="flex items-start justify-between mb-12">
+                <span className="text-xs font-mono text-muted-foreground bg-surface px-2 py-1 border border-border">0{i + 1}</span>
+              </div>
+              
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-foreground mb-4 tracking-tight">{cat.title}</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">{cat.description}</p>
+              </div>
 
-              <div className="mt-auto w-full flex flex-col gap-5">
-                {cat.items.map((item, j) => (
-                  <div key={j} className="flex flex-col items-center justify-center">
-                    <span className="text-[15px] font-medium text-foreground">{item.name}</span>
-                    <span className="text-xs text-muted mt-1">{item.detail}</span>
-                  </div>
-                ))}
+              <div className="mt-auto space-y-6">
+                <div className="h-[1px] w-full bg-border" />
+                <div className="grid grid-cols-1 gap-4">
+                  {cat.items.map((item, j) => (
+                    <div key={j} className="flex items-center group/item justify-between">
+                      <div className="flex flex-col">
+                        <span className="text-sm font-medium text-foreground group-hover/item:text-accent-blue transition-colors">{item.name}</span>
+                        <span className="text-[11px] uppercase tracking-wider text-muted-foreground/60 mt-0.5">{item.detail}</span>
+                      </div>
+                      <svg 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        className="w-3 h-3 text-muted-foreground opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
