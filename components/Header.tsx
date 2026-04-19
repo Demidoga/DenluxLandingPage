@@ -23,25 +23,24 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-white/40 backdrop-blur-md shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
           : "bg-transparent"
-      }`}
+        }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 lg:px-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 lg:px-0">
         {/* Logo */}
 
-          <a href="#" aria-label="Denlux Dental home">
-            <Image
-              src={scrolled ? "/Final logo 2.png" : "/Final logo.png"}
-              alt="Denlux Dental logo"
-              width={140}
-              height={48}
-              className={`h-10 w-auto transition-all duration-300 `}
-              priority
-            />
-          </a>
+        <a href="#" aria-label="Denlux Dental home">
+          <Image
+            src={scrolled ? "/Final logo 2.png" : "/Final logo.png"}
+            alt="Denlux Dental logo"
+            width={140}
+            height={48}
+            className={`h-10 w-auto transition-all duration-300 `}
+            priority
+          />
+        </a>
 
 
         {/* Desktop nav */}
@@ -53,9 +52,8 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-foreground ${
-                scrolled ? "text-muted" : "text-white/70 hover:text-white"
-              }`}
+              className={`text-sm font-medium transition-colors duration-200 hover:text-foreground ${scrolled ? "text-muted" : "text-white/70 hover:text-white"
+                }`}
             >
               {link.label}
             </a>
@@ -76,28 +74,24 @@ export default function Header() {
           aria-expanded={mobileOpen}
         >
           <span
-            className={`block h-[1.5px] w-full transition-all duration-300 ${
-              scrolled ? "bg-foreground" : "bg-white"
-            } ${mobileOpen ? "rotate-45 translate-y-[9px]" : ""}`}
+            className={`block h-[1.5px] w-full transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"
+              } ${mobileOpen ? "rotate-45 translate-y-[9px]" : ""}`}
           />
           <span
-            className={`block h-[1.5px] w-full transition-all duration-300 ${
-              scrolled ? "bg-foreground" : "bg-white"
-            } ${mobileOpen ? "opacity-0" : ""}`}
+            className={`block h-[1.5px] w-full transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"
+              } ${mobileOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block h-[1.5px] w-full transition-all duration-300 ${
-              scrolled ? "bg-foreground" : "bg-white"
-            } ${mobileOpen ? "-rotate-45 -translate-y-[9px]" : ""}`}
+            className={`block h-[1.5px] w-full transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"
+              } ${mobileOpen ? "-rotate-45 -translate-y-[9px]" : ""}`}
           />
         </button>
       </div>
 
       {/* Mobile nav */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-white ${
-          mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 bg-white ${mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <nav className="flex flex-col px-6 py-4 gap-1" aria-label="Mobile navigation">
           {navLinks.map((link) => (
