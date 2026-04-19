@@ -144,7 +144,7 @@ export default function Hero() {
             <div className="w-px h-8 bg-white/10" />
             <div className="flex flex-col gap-1 text-[9px] font-mono text-white/20 uppercase tracking-widest">
               <span>LOCATION</span>
-              <span className="text-accent-blue">Gulf Star Heights, Umer Block, Paris City Road, Street No. 3, H-13, Islamabad</span>
+              <span className="text-muted">Gulf Star Heights, Umer Block, Paris City Road, Street No. 3, H-13, Islamabad</span>
             </div>
           </div>
         </div>

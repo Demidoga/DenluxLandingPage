@@ -5,21 +5,15 @@ import Image from "next/image";
 
 const doctors = [
   {
-    name: "Dr. Hassan Riaz",
-    title: [
-      "BDS, RDS (BUMDC, PNS Shifa Hospital)",
-      "Demonstrator, Armed Forces Institute of Dentistry (AFID, CMH Rawalpindi)"
-    ],
-    bio: "Specializing in restorative and cosmetic dentistry, Dr. Hassan combines over five years of clinical precision with a dedicated commitment to patient-centered care using the latest dental advancements.",
+    name: "Dr. Ahmed Khan",
+    title: "BDS, FCPS (Operative Dentistry)",
+    bio: "With over 12 years of clinical experience, Dr. Khan specializes in restorative and cosmetic dentistry. He is committed to delivering precise, patient-centered care using the latest techniques.",
     image: "/doc2.png",
   },
   {
-    name: "Dr. Saad Ahmed",
-    title: [
-      "BDS (de' Montmorency College of Dentistry)",
-      "Demonstrator, Armed Forces Institute of Dentistry (AFID, CMH Rawalpindi)"
-    ],
-    bio: "With expertise in prosthodontic treatments and preventive dental care, Dr. Saad focuses on achieving natural, lasting results through a meticulous and gentle clinical approach.",
+    name: "Dr. Sara Malik",
+    title: "BDS, MSc (Prosthodontics)",
+    bio: "Dr. Malik brings 10 years of expertise in prosthodontic treatments and preventive dental care. She focuses on creating natural, lasting results with a gentle approach.",
     image: "/doc1.png",
   },
 ];
@@ -46,21 +40,18 @@ export default function Team() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="team" className="section-padding bg-surface border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section ref={sectionRef} id="team" className="section-padding bg-white flex flex-col items-center">
+      <div className="max-w-7xl mx-auto">
         {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal">
-          <div className="max-w-2xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Clinical Staff</p>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1]">
-              Experienced hands,<br />compassionate care
-            </h2>
-          </div>
-          <div className="mt-6 md:mt-0 max-w-xs">
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Our specialists are recognized leaders in clinical dentistry and restorative surgery.
-            </p>
-          </div>
+        <div className="max-w-2xl mx-auto text-center mb-20 reveal">
+          <p className="text-sm uppercase tracking-[0.15em] text-muted mb-4">
+            Meet the team
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            Experienced hands,
+            <br />
+            compassionate care
+          </h2>
         </div>
 
         {/* Doctor cards */}
@@ -73,28 +64,26 @@ export default function Team() {
             >
               <div className="flex flex-col sm:flex-row gap-6 lg:gap-8">
                 {/* Portrait */}
-                <div className="relative w-full sm:w-48 lg:w-56 flex-shrink-0 aspect-[3/4] overflow-hidden bg-transparent">
+                <div className="relative w-full sm:w-48 lg:w-56 flex-shrink-0 aspect-[3/4] rounded-2xl overflow-hidden  bg-transparent">
                   <Image
                     src={doc.image}
                     alt={`Portrait of ${doc.name}`}
                     fill
-                    className="object-cover object-top grayscale transition-all duration-500 group-hover:scale-105"
+                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
                     sizes="(max-width: 640px) 100vw, 224px"
                   />
                 </div>
 
                 {/* Info */}
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-xl font-bold text-foreground tracking-tight">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {doc.name}
                   </h3>
-                  <div className="text-[11px] text-muted-foreground mt-2 font-mono uppercase tracking-widest flex flex-col gap-1 opacity-70">
-                    {doc.title.map((line, idx) => (
-                      <span key={idx} className="leading-tight">{line}</span>
-                    ))}
-                  </div>
-                  <div className="w-12 h-[1px] bg-border my-6" />
-                  <p className="text-[15px] text-muted-foreground leading-relaxed max-w-sm">
+                  <p className="text-sm text-muted mt-1 font-mono">
+                    {doc.title}
+                  </p>
+                  <div className="w-8 h-px bg-border my-4" />
+                  <p className="text-sm text-muted leading-relaxed">
                     {doc.bio}
                   </p>
                 </div>

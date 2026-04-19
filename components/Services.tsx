@@ -56,7 +56,7 @@ export default function Services() {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
           <div className="max-w-2xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Services & Specialized Care</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted mb-4">Services & Specialized Care</p>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1]">
               Advanced dental solutions<br />for every patient
             </h2>
