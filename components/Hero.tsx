@@ -21,9 +21,9 @@ export default function Hero() {
           sizes="100vw"
         />
         {/* Gradient Overlay for Readability - Darker on the left where text sits */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
         {/* Subtle radial vignette to pull focus center-left */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+        {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,transparent_0%,rgba(0,0,0,0.4)_100%)]" /> */}
       </div>
 
       {/* Content */}

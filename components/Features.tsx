@@ -10,7 +10,7 @@ const featureImages = [
 ];
 
 const FADE_DURATION = 2000; // ms — must match CSS transition duration
-const DISPLAY_DURATION = 3000; // ms — how long each image stays fully visible
+const DISPLAY_DURATION = 2000; // ms — how long each image stays fully visible
 
 const features = [
   {
