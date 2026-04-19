@@ -119,7 +119,7 @@ export default function Features() {
         mask="fade-edges"
         size={42}
         aria-hidden="true"
-        className="pointer-events-none opacity-8 z-0 max-w-4xl max-h-xl left-1/2 -translate-x-1/2"
+        className="pointer-events-none opacity-6 z-0 max-w-4xl max-h-xl left-1/2 -translate-x-1/2"
       />
 
       {/* Content — left-aligned, above the image */}

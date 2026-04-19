@@ -14,7 +14,8 @@ const footerLinks = {
     { label: "Emergency Care", href: "#cta" },
   ],
   contact: [
-    { label: "+92 (000) 000-0000", href: "tel:+920000000000" },
+    { label: "+92 333 5247468", href: "tel:+920000000000" },
+    { label: "+92 325 4682038", href: "tel:+920000000000" },
     { label: "info@denluxdental.com", href: "mailto:info@denluxdental.com" },
   ],
 };
@@ -71,7 +72,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Clinic links */}
+          {/* Clinic links 
           <div>
             <p className="text-xs uppercase tracking-[0.15em] text-muted font-medium mb-4">
               Clinic
@@ -89,7 +90,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
+*/}
           {/* Services links */}
           <div>
             <p className="text-xs uppercase tracking-[0.15em] text-muted font-medium mb-4">
@@ -126,13 +127,18 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div>
             <p className="text-xs uppercase tracking-[0.15em] text-muted font-medium mb-3">
               Location
             </p>
             <p className="text-sm text-foreground leading-relaxed">
-              123 Medical Plaza,
+              Gulf Star Heights,
               <br />
-              Main Boulevard, Lahore
+              Umer Block, Paris City Road,
+              <br />
+               Street No. 3, H-13, Islamabad, 
             </p>
           </div>
         </div>

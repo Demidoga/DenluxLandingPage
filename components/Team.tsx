@@ -73,7 +73,7 @@ export default function Team() {
             >
               <div className="flex flex-col sm:flex-row gap-6 lg:gap-8">
                 {/* Portrait */}
-                <div className="relative w-full sm:w-48 lg:w-56 flex-shrink-0 aspect-[3/4] border border-border overflow-hidden bg-transparent">
+                <div className="relative w-full sm:w-48 lg:w-56 flex-shrink-0 aspect-[3/4] overflow-hidden bg-transparent">
                   <Image
                     src={doc.image}
                     alt={`Portrait of ${doc.name}`}
