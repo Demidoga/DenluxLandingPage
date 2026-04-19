@@ -1,8 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { BGPattern } from "@/components/ui/bg-pattern";
+
+const featureImages = [
+  { src: "/drill.png", alt: "Dental handpiece illustration" },
+  { src: "/tools.png", alt: "Dental tools and instruments" },
+];
+
+const FADE_DURATION = 2000; // ms — must match CSS transition duration
+const DISPLAY_DURATION = 3000; // ms — how long each image stays fully visible
 
 const features = [
   {
@@ -34,7 +42,10 @@ const features = [
 
 export default function Features() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [activeImage, setActiveImage] = useState(0);
+  const [phase, setPhase] = useState<"visible" | "fading-out" | "fading-in">("visible");
 
+  // Scroll reveal observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -53,23 +64,51 @@ export default function Features() {
     return () => observer.disconnect();
   }, []);
 
+  // Sequential fade: visible → fade-out → switch image → fade-in → visible
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === "visible") {
+      timeout = setTimeout(() => setPhase("fading-out"), DISPLAY_DURATION);
+    } else if (phase === "fading-out") {
+      timeout = setTimeout(() => {
+        setActiveImage((prev) => (prev + 1) % featureImages.length);
+        setPhase("fading-in");
+      }, FADE_DURATION);
+    } else if (phase === "fading-in") {
+      timeout = setTimeout(() => setPhase("visible"), FADE_DURATION);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [phase]);
+
+  // Determine opacity for a given image index
+  const getImageOpacity = (index: number) => {
+    if (index !== activeImage) return "opacity-0";
+    if (phase === "fading-out") return "opacity-0";
+    return "opacity-100";
+  };
+
   return (
     <section
       ref={sectionRef}
       id="features"
       className="relative bg-white overflow-hidden min-h-[720px]"
     >
-      {/* Background image — positioned right, behind content */}
+      {/* Background images — positioned right, behind content */}
       <div className="absolute inset-0 hidden lg:block">
         <div className="absolute top-0 right-0 w-[55%] h-full">
-          <Image
-            src="/drill.png"
-            alt="Dental handpiece illustration"
-            fill
-            className="object-contain object-right"
-            sizes="55vw"
-            priority
-          />
+          {featureImages.map((img, i) => (
+            <Image
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              fill
+              className={`object-contain object-right transition-opacity duration-2000 ease-in-out ${getImageOpacity(i)}`}
+              sizes="55vw"
+              priority={i === 0}
+            />
+          ))}
         </div>
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-45% to-transparent" />
@@ -123,16 +162,20 @@ export default function Features() {
         </div>
       </div>
 
-      {/* Mobile image — shown below content on small screens */}
+      {/* Mobile image — sequential fade on small screens too */}
       <div className="relative h-[400px] lg:hidden reveal">
-        <Image
-          src="/drill.png"
-          alt="Dental handpiece illustration"
-          fill
-          className="object-contain object-center"
-          sizes="100vw"
-        />
+        {featureImages.map((img, i) => (
+          <Image
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            fill
+            className={`object-contain object-center transition-opacity duration-2000 ease-in-out ${getImageOpacity(i)}`}
+            sizes="100vw"
+          />
+        ))}
       </div>
     </section>
   );
 }
+
