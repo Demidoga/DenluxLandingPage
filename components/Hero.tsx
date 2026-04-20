@@ -72,7 +72,7 @@ export default function Hero() {
             sizes="100vw"
           />
           {/* Gradient Overlay for Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
         </div>
 
         {/* Content */}
