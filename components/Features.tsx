@@ -5,8 +5,8 @@ import Image from "next/image";
 import { BGPattern } from "@/components/ui/bg-pattern";
 
 const featureImages = [
-  { src: "/drill.png", alt: "Dental handpiece illustration" },
-  { src: "/tools.png", alt: "Dental tools and instruments" },
+  { src: "/drill.webp", alt: "Dental handpiece illustration" },
+  { src: "/tools.webp", alt: "Dental tools and instruments" },
 ];
 
 const FADE_DURATION = 2000; // ms — must match CSS transition duration
