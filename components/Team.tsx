@@ -44,10 +44,10 @@ export default function Team() {
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="max-w-2xl mx-auto text-center mb-20 reveal">
-          <p className="text-sm uppercase tracking-[0.15em] text-muted mb-4">
+          <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">
             Meet the team
           </p>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.05]">
             Experienced hands,
             <br />
             compassionate care

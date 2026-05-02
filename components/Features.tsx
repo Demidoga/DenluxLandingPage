@@ -127,10 +127,10 @@ export default function Features() {
         <div className="flex flex-col justify-center py-20 px-6 lg:py-28 lg:pl-8 lg:pr-16 lg:max-w-[55%]">
           {/* Section header */}
           <div className="mb-14 reveal">
-            <p className="text-sm uppercase tracking-[0.15em] text-muted mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent-blue font-mono mb-5">
               Why choose us
             </p>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.05]">
               Built around precision
               <br />
               and patient safety
@@ -142,17 +142,17 @@ export default function Features() {
             {features.map((feature, i) => (
               <div
                 key={i}
-                className="reveal group flex items-start gap-5 py-6 border-t border-border last:border-b transition-colors duration-200"
+                className="reveal group flex items-start gap-5 py-6 border-t border-border last:border-b hover:bg-accent-blue-soft transition-colors duration-200 cursor-default -mx-6 px-6 lg:-mx-8 lg:px-8"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <span className="text-xs font-mono text-muted mt-1 shrink-0 w-6">
+                <span className="text-xs font-mono text-accent-blue/50 group-hover:text-accent-blue mt-1 shrink-0 w-6 transition-colors duration-200">
                   0{i + 1}
                 </span>
                 <div>
-                  <h3 className="text-[15px] font-semibold text-foreground mb-1">
+                  <h3 className="text-base font-semibold text-foreground mb-1.5 group-hover:text-accent-blue transition-colors duration-200">
                     {feature.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-muted">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     {feature.description}
                   </p>
                 </div>

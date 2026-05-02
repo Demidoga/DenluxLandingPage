@@ -64,8 +64,8 @@ export default function Testimonials() {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal">
           <div className="max-w-2xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Patient Experiences</p>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1]">
+            <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">Patient Experiences</p>
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.05]">
               Trusted by patients,<br />proven by clinical results
             </h2>
           </div>

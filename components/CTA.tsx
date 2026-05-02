@@ -34,7 +34,7 @@ export default function CTA() {
           <p className="text-sm uppercase tracking-[0.15em] text-white/40 mb-6">
             Ready to get started?
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.05]">
             Your healthier smile
             <br />
             begins here

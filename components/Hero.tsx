@@ -80,9 +80,7 @@ export default function Hero() {
           <div className="max-w-4xl">
             {/* Clinical Identifier / Kicker */}
             <div className="flex items-center gap-4 mb-10 animate-fade-in-up">
-              <div className="flex items-center justify-center w-8 h-8 border border-white/10 bg-white/5 backdrop-blur-md">
-                <Activity className="size-4 text-accent-blue" />
-              </div>
+             
               <div className="flex flex-col">
                 <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-white/80">
               DENLUX DENTAL CLINIC
@@ -134,7 +132,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Aesthetic Technical Detail (Bottom Left) */}
+        {/* Aesthetic Technical Detail (Bottom Left) 
         <div className="absolute bottom-12 left-12 hidden lg:block animate-fade-in-up animate-delay-400">
           <div className="flex items-center gap-8">
             <div className="flex flex-col gap-1 text-[9px] font-mono text-white/20 uppercase tracking-widest">
@@ -148,12 +146,37 @@ export default function Hero() {
             </div>
           </div>
         </div>
+        */}
+      
+        {/* Info Strip */}
+        <div className="absolute bottom-0 left-0 right-0 h-9 overflow-hidden border-t border-white/10 bg-black/80 backdrop-blur-sm z-20 flex items-center">
+          {/* Gradient fade edges */}
+          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-12 right-12 flex flex-col items-center gap-4 animate-fade-in-up animate-delay-400">
-          <span className="text-[9px] font-mono text-white/20 uppercase [writing-mode:vertical-rl] tracking-[0.3em] mb-2">Scroll to explore</span>
-          <div className="w-px h-20 bg-gradient-to-b from-white/20 via-white/10 to-transparent" />
+          <div className="animate-marquee flex items-center whitespace-nowrap">
+            {[0, 1].map((i) => (
+              <span key={i} className="flex items-center">
+                {[
+                  { label: "LOCATION", value: "Gulf Star Heights, H-13, Islamabad" },
+                  { label: "HOURS", value: "Mon – Sat  •  10:00 AM – 8:00 PM" },
+                  { label: "EID SPECIAL", value: "Free Consultation + 30% Off — Limited Offer Until Eid ul Adha", accent: true },
+                  { label: "CONTACT", value: "+92 333 0000000" },
+                  { label: "BOOK", value: "Walk-ins Welcome  •  Appointments Preferred" },
+                ].map((item, j) => (
+                  <span key={j} className="flex items-center">
+                    <span className="mx-6 text-white/20 text-[10px] select-none">◆</span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/35 mr-2">{item.label}</span>
+                    <span className={`font-mono text-[10px] uppercase tracking-[0.15em] ${item.accent ? "text-[#1bc3ea]" : "text-white/60"}`}>
+                      {item.value}
+                    </span>
+                  </span>
+                ))}
+              </span>
+            ))}
+          </div>
         </div>
+
       </section>
     </div>
   );

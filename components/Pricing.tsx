@@ -76,8 +76,8 @@ export default function Pricing() {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
           <div className="max-w-2xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-muted mb-4">Investment & Plans</p>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.1]">
+            <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">Investment & Plans</p>
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.05]">
               Transparent pricing,<br />no hidden clinical fees
             </h2>
           </div>
