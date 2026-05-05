@@ -65,7 +65,7 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal">
           <div className="max-w-2xl">
             <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">Patient Experiences</p>
-            <h2 className="font-sans text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.0]">
+            <h2 className="font-sans text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
               Trusted by patients,<br />proven by clinical results
             </h2>
           </div>
@@ -84,7 +84,7 @@ export default function Testimonials() {
               className={`p-10 lg:p-14 border-r border-b transition-all duration-300 cursor-pointer ${
                 activeIndex === i
                   ? "bg-foreground text-white border-foreground"
-                  : "bg-white border-border hover:bg-surface"
+                  : "bg-background border-border hover:bg-surface"
               }`}
               onClick={() => setActiveIndex(i)}
               role="button"
@@ -112,8 +112,8 @@ export default function Testimonials() {
               </div>
 
               <p
-                className={`text-lg font-medium leading-relaxed italic ${
-                  activeIndex === i ? "text-white/90" : "text-foreground"
+                className={`text-[0.9375rem] font-normal leading-[1.75] italic ${
+                  activeIndex === i ? "text-white/90" : "text-muted-foreground"
                 }`}
               >
                 &ldquo;{t.text}&rdquo;
@@ -122,7 +122,7 @@ export default function Testimonials() {
               <div className="mt-10 flex items-center justify-between border-t pt-8 border-border/10">
                 <div>
                   <p
-                    className={`text-sm font-bold uppercase tracking-widest ${
+                    className={`text-sm font-semibold tracking-wide ${
                       activeIndex === i ? "text-white" : "text-foreground"
                     }`}
                   >

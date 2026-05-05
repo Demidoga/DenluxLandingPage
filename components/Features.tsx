@@ -93,7 +93,7 @@ export default function Features() {
     <section
       ref={sectionRef}
       id="features"
-      className="relative bg-white overflow-hidden min-h-[720px]"
+      className="relative bg-background overflow-hidden min-h-[720px]"
     >
       {/* Background images — positioned right, behind content */}
       <div className="absolute inset-0 hidden lg:block">
@@ -111,7 +111,7 @@ export default function Features() {
           ))}
         </div>
         {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-45% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 via-45% to-transparent" />
       </div>
 
       <RippleGrid
@@ -135,7 +135,7 @@ export default function Features() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent-blue font-mono mb-5">
               Why choose us
             </p>
-            <h2 className="font-sans text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.0]">
+            <h2 className="font-sans text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
               Built around precision
               <br />
               and patient safety

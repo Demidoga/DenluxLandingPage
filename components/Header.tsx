@@ -88,8 +88,8 @@ export default function Header() {
                     text-[0.8125rem] font-medium
                     transition-all duration-200 cursor-pointer whitespace-nowrap
                     ${isActive
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-500 hover:text-gray-900 hover:bg-gray-100/70"
+                      ? "bg-muted-foreground text-white"
+                      : "text-muted-foreground hover:text-foreground hover:bg-gray-100/70"
                     }
                   `}
                 >
@@ -103,7 +103,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="/contact"
-              className="text-[0.8125rem] font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150"
+              className="text-[0.8125rem] font-medium text-muted-foreground hover:text-foreground transition-colors duration-150"
             >
               Contact
             </a>
@@ -114,7 +114,7 @@ export default function Header() {
                 bg-muted-foreground text-white
                 text-[0.8rem] font-semibold rounded-none
                 transition-all duration-150
-                hover:bg-gray-800
+                hover:bg-foreground
               "
             >
               Book Appointment

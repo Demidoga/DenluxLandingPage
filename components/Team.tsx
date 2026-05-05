@@ -40,14 +40,14 @@ export default function Team() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="team" className="section-padding bg-white flex flex-col items-center">
+    <section ref={sectionRef} id="team" className="section-padding bg-surface flex flex-col items-center">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="max-w-2xl mx-auto text-center mb-20 reveal">
           <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">
             Meet the team
           </p>
-          <h2 className="font-sans text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.0]">
+          <h2 className="font-sans text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
             Experienced hands,
             <br />
             compassionate care
@@ -79,11 +79,11 @@ export default function Team() {
                   <h3 className="text-lg font-semibold text-foreground">
                     {doc.name}
                   </h3>
-                  <p className="text-sm text-muted mt-1 font-mono">
+                  <p className="text-xs text-muted-foreground mt-1 font-mono uppercase tracking-wider">
                     {doc.title}
                   </p>
                   <div className="w-8 h-px bg-border my-4" />
-                  <p className="text-sm text-muted leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {doc.bio}
                   </p>
                 </div>

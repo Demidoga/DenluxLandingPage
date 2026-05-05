@@ -60,8 +60,8 @@ export default function Services() {
             <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">
               Services & Specialized Care
             </p>
-            <h2 className="font-sans text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.0]">
-              Advanced dental<br />solutions for<br className="sm:hidden" />{" "}
+            <h2 className="font-sans text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
+              Advanced dental<br />solutions for{" "}
               every patient
             </h2>
           </div>
@@ -106,7 +106,7 @@ export default function Services() {
 
                     <div className="relative z-10">
                       <h3
-                        className={`font-sans text-3xl lg:text-[2.25rem] font-bold tracking-tight leading-[1.1] mb-4 ${
+                        className={`font-sans text-2xl lg:text-[1.875rem] font-semibold tracking-tight leading-[1.15] mb-4 ${
                           isDark ? "text-white" : "text-foreground"
                         }`}
                       >
@@ -130,7 +130,7 @@ export default function Services() {
                           <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-accent-blue shrink-0" />
                           <div>
                             <span
-                              className={`block text-[15px] font-semibold leading-snug ${
+                              className={`block text-sm font-semibold leading-snug ${
                                 isDark ? "text-white" : "text-foreground"
                               }`}
                             >
