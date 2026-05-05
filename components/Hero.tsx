@@ -114,8 +114,8 @@ export default function Hero() {
                 size="lg"
                 className="rounded-none h-14 px-10 text-base font-semibold transition-transform active:scale-95"
               >
-                <a href="#cta" className="flex items-center gap-2">
-                  Book consultation <ArrowRight className="size-4" />
+                <a href="/contact" className="flex items-center gap-2">
+                  Book Appointment <ArrowRight className="size-4" />
                 </a>
               </Button>
               <Button
@@ -149,7 +149,7 @@ export default function Hero() {
         */}
       
         {/* Info Strip */}
-        <div className="absolute bottom-0 left-0 right-0 h-9 overflow-hidden border-t border-white/10 bg-black/80 backdrop-blur-sm z-20 flex items-center">
+        <div className="absolute bottom-0 left-0 right-0 h-9 overflow-hidden border-t border-white/10 bg-white/10 backdrop-blur-sm z-20 flex items-center">
           {/* Gradient fade edges */}
           <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
@@ -166,8 +166,8 @@ export default function Hero() {
                 ].map((item, j) => (
                   <span key={j} className="flex items-center">
                     <span className="mx-6 text-white/20 text-[10px] select-none">◆</span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/35 mr-2">{item.label}</span>
-                    <span className={`font-mono text-[10px] uppercase tracking-[0.15em] ${item.accent ? "text-[#1bc3ea]" : "text-white/60"}`}>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/45 mr-2">{item.label}</span>
+                    <span className={`font-mono text-[10px] uppercase tracking-[0.15em] ${item.accent ? "text-[#1bc3ea]" : "text-white/85"}`}>
                       {item.value}
                     </span>
                   </span>

@@ -9,7 +9,8 @@ const navLinks = [
   { label: "Services", href: "/#services" },
   { label: "Team", href: "/#team" },
   { label: "Testimonials", href: "/#testimonials" },
-  { label: "Pricing", href: "/#pricing" }
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -63,7 +64,7 @@ export default function Header() {
             asChild
             variant="accent"
           >
-            <a href="#cta">Book Appointment</a>
+            <a href="/contact">Book Appointment</a>
           </Button>
         </nav>
 
@@ -111,7 +112,7 @@ export default function Header() {
             size="lg"
             variant="accent"
           >
-            <a href="#cta" onClick={() => setMobileOpen(false)}>
+            <a href="/contact" onClick={() => setMobileOpen(false)}>
               Book Appointment
             </a>
           </Button>

@@ -11,7 +11,7 @@ const footerLinks = {
     { label: "General Dentistry", href: "#services" },
     { label: "Cosmetic Procedures", href: "#services" },
     { label: "Preventive Care", href: "#services" },
-    { label: "Emergency Care", href: "#cta" },
+    { label: "Emergency Care", href: "/contact" },
   ],
   contact: [
     { label: "+92 333 5247468", href: "tel:+920000000000" },

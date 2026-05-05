@@ -23,7 +23,7 @@ export default function Home() {
           title="Your healthier smile begins here"
           description="Schedule your appointment today and experience dental care that puts your comfort and health first."
           buttonText="Book an appointment"
-          buttonUrl="#cta"
+          buttonUrl="/contact"
           items={[
             "Experienced Professionals",
             "State-of-the-art Equipment",

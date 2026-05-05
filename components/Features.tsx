@@ -116,8 +116,8 @@ export default function Features() {
 
       <RippleGrid
         gridColor="#030303ff"
-        rippleIntensity={0.01}
-        gridSize={30}
+        rippleIntensity={0.02}
+        gridSize={42}
         gridThickness={50}
         fadeDistance={1.2}
         vignetteStrength={2.5}

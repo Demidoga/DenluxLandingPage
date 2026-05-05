@@ -47,7 +47,7 @@ export default function CTA() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
           <a
-            href="tel:+920000000000"
+            href="/contact"
             className="inline-flex items-center px-12 py-5 rounded-full bg-accent-blue text-white text-sm font-medium hover:bg-accent-blue/85 transition-all duration-200"
           >
             Book an appointment

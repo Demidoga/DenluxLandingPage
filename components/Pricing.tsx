@@ -174,7 +174,7 @@ export default function Pricing() {
                   !plan.highlighted ? "border-border hover:bg-foreground hover:text-white" : ""
                 }`}
               >
-                <a href="#cta">
+                <a href="/contact">
                   Book Appointment
                 </a>
               </Button>
