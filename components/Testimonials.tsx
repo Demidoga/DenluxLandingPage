@@ -65,7 +65,7 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 reveal">
           <div className="max-w-2xl">
             <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">Patient Experiences</p>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.05]">
+            <h2 className="font-sans text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.0]">
               Trusted by patients,<br />proven by clinical results
             </h2>
           </div>
@@ -77,7 +77,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border-l border-t border-border reveal">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-l border-t border-border reveal shadow-[4px_4px_0_0_rgba(0,0,0,0.06)]">
           {testimonials.map((t, i) => (
             <div
               key={i}

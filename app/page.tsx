@@ -18,7 +18,7 @@ export default function Home() {
         <Services />
         <Team />
         <Testimonials />
-        <Pricing />
+        {/* <Pricing /> */}
         <Cta4
           title="Your healthier smile begins here"
           description="Schedule your appointment today and experience dental care that puts your comfort and health first."

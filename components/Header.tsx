@@ -1,123 +1,200 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Features", href: "/#features" },
-  { label: "Services", href: "/#services" },
-  { label: "Team", href: "/#team" },
-  { label: "Testimonials", href: "/#testimonials" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "Contact", href: "/contact" },
+  { label: "Features", href: "/#features", id: "features" },
+  { label: "Services", href: "/#services", id: "services" },
+  { label: "Team", href: "/#team", id: "team" },
+  { label: "Testimonials", href: "/#testimonials", id: "testimonials" },
+  { label: "Pricing", href: "/#pricing", id: "pricing" },
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [active, setActive] = useState("");
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY > lastScrollY.current && currentY > 60) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      lastScrollY.current = currentY;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const els = navLinks
+      .map(({ id }) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-transparent backdrop-blur-md shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
-          : "bg-transparent"
-        }`}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 lg:px-0">
-        {/* Logo */}
-
-        <a href="#" aria-label="Denlux Dental home">
-          <Image
-            src={scrolled ? "/Final logo 2.png" : "/Final logo.png"}
-            alt="Denlux Dental logo"
-            width={140}
-            height={48}
-            className={`h-10 w-auto transition-all duration-300 `}
-            priority
-          />
-        </a>
-
-
-        {/* Desktop nav */}
-        <nav
-          className="hidden md:flex items-center gap-8"
-          aria-label="Main navigation"
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium transition-colors duration-200 ${scrolled ? "text-muted hover:text-accent-blue" : "text-white/70 hover:text-white"
-                }`}
-            >
-              {link.label}
-            </a>
-          ))}
-          <Button
-            asChild
-            variant="accent"
-          >
-            <a href="/contact">Book Appointment</a>
-          </Button>
-        </nav>
-
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden relative w-6 h-5 flex flex-col justify-between"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={mobileOpen}
-        >
-          <span
-            className={`block h-[1.5px] w-full transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"
-              } ${mobileOpen ? "rotate-45 translate-y-[9px]" : ""}`}
-          />
-          <span
-            className={`block h-[1.5px] w-full transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"
-              } ${mobileOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block h-[1.5px] w-full transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"
-              } ${mobileOpen ? "-rotate-45 -translate-y-[9px]" : ""}`}
-          />
-        </button>
-      </div>
-
-      {/* Mobile nav */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-white ${mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-opacity duration-500 ease-in-out ${visible ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
       >
-        <nav className="flex flex-col px-6 py-4 gap-1" aria-label="Mobile navigation">
-          {navLinks.map((link) => (
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 h-[68px]">
+
+          {/* Logo */}
+          <a href="#" aria-label="Denlux Dental home" className="flex-shrink-0">
+            <Image
+              src="/Final logo 2.png"
+              alt="Denlux Dental logo"
+              width={110}
+              height={36}
+              className="h-8 w-auto"
+              priority
+            />
+          </a>
+
+          {/* ── Nav island (desktop) ─────────────────────────────── */}
+          <nav
+            className="hidden md:flex items-center bg-white border border-gray-200 rounded-full p-[5px] gap-[3px] shadow-[0_1px_6px_rgba(0,0,0,0.08)]"
+            aria-label="Main navigation"
+          >
+            {navLinks.map((link) => {
+              const isActive = active === link.id;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`
+                    px-4 py-[7px] rounded-full
+                    text-[0.8125rem] font-medium
+                    transition-all duration-200 cursor-pointer whitespace-nowrap
+                    ${isActive
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-500 hover:text-gray-900 hover:bg-gray-100/70"
+                    }
+                  `}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+          </nav>
+
+          {/* Right actions */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="/contact"
+              className="text-[0.8125rem] font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150"
+            >
+              Contact
+            </a>
+            <a
+              href="/contact"
+              className="
+                inline-flex items-center h-9 px-5
+                bg-muted-foreground text-white
+                text-[0.8rem] font-semibold rounded-none
+                transition-all duration-150
+                hover:bg-gray-800
+              "
+            >
+              Book Appointment
+            </a>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] cursor-pointer"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+          >
+            <span className={`block h-[1.5px] w-[18px] bg-foreground origin-center transition-transform duration-300 ${mobileOpen ? "rotate-45 translate-y-[3.25px]" : ""}`} />
+            <span className={`block h-[1.5px] bg-foreground origin-center transition-all duration-300    ${mobileOpen ? "w-0 opacity-0" : "w-[18px] opacity-100"}`} />
+            <span className={`block h-[1.5px] w-[18px] bg-foreground origin-center transition-transform duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[3.25px]" : ""}`} />
+          </button>
+        </div>
+      </header>
+
+      {/* Spacer */}
+      <div className="h-[68px]" />
+
+      {/* ── Mobile nav ──────────────────────────────────────────── */}
+      <div
+        className={`
+          fixed inset-0 z-40 md:hidden bg-background
+          flex flex-col pt-[68px]
+          transition-all duration-300
+          ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+        `}
+      >
+        <nav className="flex flex-col px-6 border-t border-border" aria-label="Mobile navigation">
+          {navLinks.map((link, i) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted py-3 border-b border-border last:border-0 hover:text-accent-blue transition-colors"
+              className={`
+                flex items-center py-4
+                text-[1rem] font-medium
+                border-b border-border last:border-0
+                transition-all duration-200
+                ${active === link.id ? "text-foreground" : "text-muted-foreground"}
+              `}
+              style={{
+                opacity: mobileOpen ? 1 : 0,
+                transform: mobileOpen ? "translateX(0)" : "translateX(-10px)",
+                transition: `color 200ms, transform 280ms ${50 + i * 35}ms, opacity 280ms ${50 + i * 35}ms`,
+              }}
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
             </a>
           ))}
-          <Button
-            asChild
-            className="mt-3 w-full"
-            size="lg"
-            variant="accent"
-          >
-            <a href="/contact" onClick={() => setMobileOpen(false)}>
-              Book Appointment
-            </a>
-          </Button>
         </nav>
+
+        <div
+          className="px-6 mt-6 flex flex-col gap-3"
+          style={{
+            opacity: mobileOpen ? 1 : 0,
+            transform: mobileOpen ? "translateY(0)" : "translateY(10px)",
+            transition: `opacity 280ms ${50 + navLinks.length * 35}ms, transform 280ms ${50 + navLinks.length * 35}ms`,
+          }}
+        >
+          <a
+            href="/contact"
+            className="w-full h-12 flex items-center justify-center bg-gray-900 text-white text-sm font-semibold rounded-none"
+            onClick={() => setMobileOpen(false)}
+          >
+            Book Appointment
+          </a>
+          <a
+            href="/contact"
+            className="w-full h-12 flex items-center justify-center border border-border text-foreground text-sm font-medium rounded-none"
+            onClick={() => setMobileOpen(false)}
+          >
+            Contact
+          </a>
+        </div>
       </div>
-    </header>
+    </>
   );
 }

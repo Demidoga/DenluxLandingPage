@@ -135,7 +135,7 @@ export default function Features() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent-blue font-mono mb-5">
               Why choose us
             </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.05]">
+            <h2 className="font-sans text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.0]">
               Built around precision
               <br />
               and patient safety

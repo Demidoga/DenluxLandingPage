@@ -60,7 +60,7 @@ export default function Services() {
             <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">
               Services & Specialized Care
             </p>
-            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground leading-[1.0]">
+            <h2 className="font-sans text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.0]">
               Advanced dental<br />solutions for<br className="sm:hidden" />{" "}
               every patient
             </h2>
@@ -94,7 +94,7 @@ export default function Services() {
                   >
                     {/* Watermark number */}
                     <span
-                      className={`absolute -top-6 right-0 font-display italic font-bold select-none pointer-events-none leading-none text-[160px] ${
+                      className={`absolute -top-6 right-0 font-sans font-black select-none pointer-events-none leading-none text-[160px] ${
                         isDark
                           ? "text-white/[0.04]"
                           : "text-accent-blue/[0.08] group-hover:text-accent-blue/[0.14]"
@@ -106,7 +106,7 @@ export default function Services() {
 
                     <div className="relative z-10">
                       <h3
-                        className={`font-display text-3xl lg:text-[2.25rem] font-semibold tracking-tight leading-[1.1] mb-4 ${
+                        className={`font-sans text-3xl lg:text-[2.25rem] font-bold tracking-tight leading-[1.1] mb-4 ${
                           isDark ? "text-white" : "text-foreground"
                         }`}
                       >

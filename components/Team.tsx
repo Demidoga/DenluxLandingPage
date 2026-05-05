@@ -47,7 +47,7 @@ export default function Team() {
           <p className="text-xs font-mono uppercase tracking-[0.2em] text-accent-blue mb-5">
             Meet the team
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-foreground leading-[1.05]">
+          <h2 className="font-sans text-4xl sm:text-5xl font-bold tracking-tight text-foreground leading-[1.0]">
             Experienced hands,
             <br />
             compassionate care
@@ -64,7 +64,7 @@ export default function Team() {
             >
               <div className="flex flex-col sm:flex-row gap-6 lg:gap-8">
                 {/* Portrait */}
-                <div className="relative w-full sm:w-48 lg:w-56 flex-shrink-0 aspect-[3/4] rounded-2xl overflow-hidden  bg-transparent">
+                <div className="relative w-full sm:w-48 lg:w-56 flex-shrink-0 aspect-[3/4] overflow-hidden bg-surface border border-border shadow-[4px_4px_0_0_rgba(0,0,0,0.06)]">
                   <Image
                     src={doc.image}
                     alt={`Portrait of ${doc.name}`}

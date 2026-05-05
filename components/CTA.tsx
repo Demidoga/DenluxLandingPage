@@ -34,7 +34,7 @@ export default function CTA() {
           <p className="text-sm uppercase tracking-[0.15em] text-white/40 mb-6">
             Ready to get started?
           </p>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.05]">
+          <h2 className="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.0]">
             Your healthier smile
             <br />
             begins here
@@ -48,7 +48,10 @@ export default function CTA() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
           <a
             href="/contact"
-            className="inline-flex items-center px-12 py-5 rounded-full bg-accent-blue text-white text-sm font-medium hover:bg-accent-blue/85 transition-all duration-200"
+            className="inline-flex items-center px-10 py-4 bg-accent-blue text-white text-sm font-semibold tracking-wide
+              transition-all duration-150
+              hover:shadow-[4px_4px_0_0_rgba(27,195,234,0.4)]
+              active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
           >
             Book an appointment
             <svg
@@ -68,7 +71,11 @@ export default function CTA() {
           </a>
           <a
             href="tel:+920000000000"
-            className="inline-flex items-center px-12 py-5 rounded-full border border-white/20 text-white text-sm font-medium hover:border-accent-blue/40 hover:bg-accent-blue/10 transition-all duration-200"
+            className="inline-flex items-center px-10 py-4 border border-white/20 text-white text-sm font-semibold tracking-wide
+              transition-all duration-150
+              hover:border-accent-blue/50 hover:bg-accent-blue/10
+              hover:shadow-[4px_4px_0_0_rgba(255,255,255,0.06)]
+              active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
           >
             <svg
               className="mr-2 w-4 h-4"
