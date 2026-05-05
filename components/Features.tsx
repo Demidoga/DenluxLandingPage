@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { BGPattern } from "@/components/ui/bg-pattern";
+import RippleGrid from "@/components/ui/RippleGrid";
 
 const featureImages = [
   { src: "/drill.webp", alt: "Dental handpiece illustration" },
@@ -114,12 +114,17 @@ export default function Features() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-45% to-transparent" />
       </div>
 
-      <BGPattern
-        variant="grid"
-        mask="fade-edges"
-        size={42}
-        aria-hidden="true"
-        className="pointer-events-none opacity-6 z-0 max-w-4xl max-h-xl left-1/2 -translate-x-1/2"
+      <RippleGrid
+        gridColor="#030303ff"
+        rippleIntensity={0.01}
+        gridSize={30}
+        gridThickness={50}
+        fadeDistance={1.2}
+        vignetteStrength={2.5}
+        glowIntensity={0.02}
+        opacity={0.03}
+        mouseInteraction={true}
+        mouseInteractionRadius={1.2}
       />
 
       {/* Content — left-aligned, above the image */}

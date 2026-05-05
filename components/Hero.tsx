@@ -94,7 +94,7 @@ export default function Hero() {
             // </h1>
 }
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tighter mb-8 animate-fade-in-up animate-delay-100">
-              PRECISSION <br />
+              PRECISION <br />
               <span className="text-white/40">DENTISTRY</span>
             </h1>
 

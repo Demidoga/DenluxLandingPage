@@ -4,6 +4,15 @@ import { useEffect, useRef } from "react";
 
 const categories = [
   {
+    title: "Cosmetic Procedures",
+    description: "Enhance your smile with our range of aesthetic dental treatments designed for lasting results.",
+    items: [
+      { name: "Whitening", detail: "In-office brightening" },
+      { name: "Scaling", detail: "Tartar removal" },
+      { name: "Veneers", detail: "Porcelain overlays" },
+    ],
+  },
+  {
     title: "General Dentistry",
     description: "Comprehensive treatments to restore and maintain your dental health with clinical precision.",
     items: [
@@ -11,15 +20,6 @@ const categories = [
       { name: "Crowns", detail: "Porcelain caps" },
       { name: "Implants", detail: "Titanium replacements" },
       { name: "Root Canals", detail: "Nerve therapy" },
-    ],
-  },
-  {
-    title: "Cosmetic Procedures",
-    description: "Enhance your smile with our range of aesthetic dental treatments designed for lasting results.",
-    items: [
-      { name: "Whitening", detail: "In-office brightening" },
-      { name: "Scaling", detail: "Tartar removal" },
-      { name: "Veneers", detail: "Porcelain overlays" },
     ],
   },
   {
@@ -105,15 +105,6 @@ export default function Services() {
                     </span>
 
                     <div className="relative z-10">
-                      <span
-                        className={`inline-block text-[10px] font-mono uppercase tracking-[0.25em] mb-6 px-2.5 py-1 border ${
-                          isDark
-                            ? "text-accent-blue border-accent-blue/30 bg-accent-blue/10"
-                            : "text-accent-blue border-accent-blue/25 bg-accent-blue/[0.06]"
-                        }`}
-                      >
-                        0{i + 1}
-                      </span>
                       <h3
                         className={`font-display text-3xl lg:text-[2.25rem] font-semibold tracking-tight leading-[1.1] mb-4 ${
                           isDark ? "text-white" : "text-foreground"
