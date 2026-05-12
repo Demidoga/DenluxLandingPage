@@ -163,6 +163,32 @@ body {
   will-change: transform;
 }
 
+/* Testimonial marquee */
+@keyframes testimonialScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-marquee-track {
+  animation: testimonialScroll 60s linear infinite;
+  will-change: transform;
+  width: max-content;
+}
+
+.testimonial-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-marquee-track {
+    animation: none;
+  }
+}
+
 /* Subtle reveal on scroll — used with IntersectionObserver */
 .reveal {
   opacity: 0;

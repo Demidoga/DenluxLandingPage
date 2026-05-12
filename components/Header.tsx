@@ -8,7 +8,6 @@ const navLinks = [
   { label: "Services", href: "/#services", id: "services" },
   { label: "Team", href: "/#team", id: "team" },
   { label: "Testimonials", href: "/#testimonials", id: "testimonials" },
-  { label: "Pricing", href: "/#pricing", id: "pricing" },
 ];
 
 export default function Header() {
@@ -103,12 +102,6 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="/contact"
-              className="text-[0.8125rem] font-medium text-muted-foreground hover:text-foreground transition-colors duration-150"
-            >
-              Contact
-            </a>
-            <a
-              href="/contact"
               className="
                 inline-flex items-center h-9 px-5
                 bg-muted-foreground text-white
@@ -185,13 +178,6 @@ export default function Header() {
             onClick={() => setMobileOpen(false)}
           >
             Book Appointment
-          </a>
-          <a
-            href="/contact"
-            className="w-full h-12 flex items-center justify-center border border-border text-foreground text-sm font-medium rounded-none"
-            onClick={() => setMobileOpen(false)}
-          >
-            Contact
           </a>
         </div>
       </div>
