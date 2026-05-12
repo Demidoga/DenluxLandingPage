@@ -191,7 +191,7 @@ export default function ContactPage() {
                           className="w-full h-11 px-4 text-sm text-foreground bg-background border border-border
                             placeholder:text-muted/60
                             transition-all duration-200
-                            focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/10"
+                            focus:outline-none focus:border-muted focus:ring-2 focus:ring-muted/10"
                         />
                       </div>
                       <div>
@@ -210,7 +210,7 @@ export default function ContactPage() {
                           className="w-full h-11 px-4 text-sm text-foreground bg-background border border-border
                             placeholder:text-muted/60
                             transition-all duration-200
-                            focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/10"
+                            focus:outline-none focus:border-muted focus:ring-2 focus:ring-muted/10"
                         />
                       </div>
                     </div>
@@ -232,7 +232,7 @@ export default function ContactPage() {
                         className="w-full h-11 px-4 text-sm text-foreground bg-background border border-border
                           placeholder:text-muted/60
                           transition-all duration-200
-                          focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/10"
+                          focus:outline-none focus:border-muted focus:ring-2 focus:ring-muted/10"
                       />
                     </div>
 
@@ -253,7 +253,7 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 text-sm text-foreground bg-background border border-border resize-none
                           placeholder:text-muted/60
                           transition-all duration-200
-                          focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/10"
+                          focus:outline-none focus:border-muted focus:ring-2 focus:ring-muted/10"
                       />
                     </div>
 
